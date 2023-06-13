@@ -19,14 +19,15 @@ function onMove(event) {
   ctx.moveTo(event.offsetX, event.offsetY);
 }
 
-function onMouseDown(event) {
+function startPainting(event) {
   isPainting = true;
 }
 
-function onMouseUp(event) {
+function cancelPainting(event) {
   isPainting = false;
 }
 
 canvas.addEventListener("mousemove", onMove);
-canvas.addEventListener("mousedown", onMouseDown);
-canvas.addEventListener("mouseup", onMouseUp);
+canvas.addEventListener("mousedown", startPainting);
+canvas.addEventListener("mouseup", cancelPainting);
+canvas.addEventListener("mouseleave", cancelPainting);
