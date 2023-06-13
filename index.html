@@ -7,9 +7,7 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <canvas></canvas>
-    <input id="line-width" type="range" min="1" max="10" value="1" />
-    <div>
+    <div class="color-options">
       <input type="color" id="color" />
       <div class="color-option" style="background-color: #1abc9c" data-color="#1abc9c"></div>
       <div class="color-option" style="background-color: #2ecc71" data-color="#2ecc71"></div>
@@ -23,11 +21,20 @@
       <div class="color-option" style="background-color: #000000" data-color="#000000"></div>
       <div class="color-option" style="background-color: #ffffff" data-color="#ffffff"></div>
     </div>
-    <button id="mode-btn">Fill</button>
-    <button id="clear-btn">Clear</button>
-    <button id="erase-btn">Erase</button>
-    <input type="file" accept="image/*" id="file" />
-    <input type="text" placeholder="Write and then double click a canvas" id="text">
+    <canvas></canvas>
+    <div class="btns">
+      <span>Line Width</span>
+      <input id="line-width" type="range" min="1" max="10" value="1" />
+      <button id="mode-btn">Fill</button>
+      <button id="clear-btn">Clear</button>
+      <button id="erase-btn">Erase</button>
+      <label for="file">
+        Add Image
+        <input type="file" accept="image/*" id="file" />
+      </label>
+      <input type="text" placeholder="Write and then double click a canvas" id="text" />
+      <button id="save-btn">Save Canvas</button>
+    </div>
     <script src="app.js"></script>
   </body>
 </html>

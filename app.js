@@ -5,6 +5,7 @@ const colorOptions = Array.from(document.getElementsByClassName("color-option"))
 const modeBtn = document.getElementById("mode-btn");
 const clearBtn = document.getElementById("clear-btn");
 const eraseBtn = document.getElementById("erase-btn");
+const saveBtn = document.getElementById("save-btn");
 const lineWidth = document.getElementById("line-width");
 const fileInput = document.getElementById("file");
 const textInput = document.getElementById("text");
@@ -100,6 +101,14 @@ function onDoubleClick(event) {
   }
 }
 
+function onSaveClick() {
+  const url = canvas.toDataURL();
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "myCanvas.png";
+  a.click();
+}
+
 canvas.addEventListener("mousemove", onMove);
 canvas.addEventListener("mousedown", startPainting);
 canvas.addEventListener("mouseup", cancelPainting);
@@ -116,3 +125,5 @@ clearBtn.addEventListener("click", onClearClick);
 eraseBtn.addEventListener("click", onEraseClick);
 
 fileInput.addEventListener("change", onFileChange);
+
+saveBtn.addEventListener("click", onSaveClick);
