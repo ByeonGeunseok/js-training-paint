@@ -1,7 +1,9 @@
 "use strict";
 
 const color = document.getElementById("color");
-const colorOptions = Array.from(document.getElementsByClassName("color-option"));
+const colorOptions = Array.from(
+  document.getElementsByClassName("color-option")
+);
 const modeBtn = document.getElementById("mode-btn");
 const clearBtn = document.getElementById("clear-btn");
 const eraseBtn = document.getElementById("erase-btn");
@@ -9,6 +11,7 @@ const saveBtn = document.getElementById("save-btn");
 const lineWidth = document.getElementById("line-width");
 const fileInput = document.getElementById("file");
 const textInput = document.getElementById("text");
+const lineText = document.getElementById("line-width-text");
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
 
@@ -43,6 +46,7 @@ function cancelPainting(event) {
 
 function onLineWidthChange(event) {
   ctx.lineWidth = event.target.value;
+  lineText.innerText = event.target.value;
 }
 
 function onColorChange(event) {
